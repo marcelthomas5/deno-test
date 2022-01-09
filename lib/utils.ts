@@ -1,3 +1,3 @@
 export const sayHello = () => {
-  return 'Hello Deno 7';
+  return 'Deno on Nubo';
 };
