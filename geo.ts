@@ -18,7 +18,7 @@ app.use(async (ctx, next) => {
 });
 
 app.use(async (ctx) => {
-  ctx.response.body = `Location ${LOCATION}`;
+  ctx.response.body = LOCATION;
 });
 
 console.log(`http://localhost:${PORT}`);

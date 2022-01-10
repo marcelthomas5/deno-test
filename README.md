@@ -18,4 +18,5 @@ PORT=5502 LISTEN_ADDRESS=0.0.0.0:5502 pm2 start main.ts --name app2 --interprete
 ### Production test
 ```
 PORT=3000 LISTEN_ADDRESS=0.0.0.0:3000 pm2 start main.ts --interpreter="../nubo-deno" --interpreter-args="run --allow-net --allow-env=PORT --no-check --v8-flags=--max-old-space-size=512"
+LOCATION="Europe - London - eu-west-2" PORT=8000 LISTEN_ADDRESS=0.0.0.0:8000 pm2 start geo.ts --interpreter="../nubo-deno" --interpreter-args="run --allow-net --allow-env=PORT,LOCATION --no-check --v8-flags=--max-old-space-size=512"
 ```
