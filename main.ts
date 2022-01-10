@@ -1,8 +1,9 @@
 import { Application } from 'https://deno.land/x/oak/mod.ts';
-import { sayHello } from './lib/utils.ts';
 
 const PORT = parseInt(Deno.env.get('PORT') || '') || 8080;
 const app = new Application();
+
+console.log(Deno.env.get('LISTEN_ADDRESS'));
 
 app.use(async (ctx, next) => {
   await next();
@@ -18,7 +19,7 @@ app.use(async (ctx, next) => {
 });
 
 app.use(async (ctx) => {
-  ctx.response.body = sayHello();
+  ctx.response.body = `App ${PORT}`;
 });
 
 console.log(`http://localhost:${PORT}`);
