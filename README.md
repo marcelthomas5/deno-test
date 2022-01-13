@@ -10,13 +10,23 @@ docker run -it --init -p 8080:8080 --env SOURCE=https://raw.githubusercontent.co
 ```
 
 ```
-LISTEN_ADDRESS=0.0.0.0:5555 pm2 start main.ts --interpreter="./deno" --interpreter-args="run --allow-net --allow-env=PORT --no-check --v8-flags=--max-old-space-size=512"
+LISTEN_ADDRESS=0.0.0.0:8001 PORT=8001 LOCATION="APP 1" pm2 start geo.ts --name app1 --interpreter="deno" --interpreter-args="run --allow-all=PORT --no-check --v8-flags=--max-old-space-size=512"
+LISTEN_ADDRESS=0.0.0.0:8002 PORT=8002 LOCATION="APP 2" pm2 start geo.ts --name app2 --interpreter="deno" --interpreter-args="run --allow-all=PORT --no-check --v8-flags=--max-old-space-size=512"
 PORT=5501 LISTEN_ADDRESS=0.0.0.0:5501 pm2 start main.ts --name app1 --interpreter="../../bin/nubo-deno" --interpreter-args="run --allow-net --allow-env=PORT --no-check --v8-flags=--max-old-space-size=512"
 PORT=5502 LISTEN_ADDRESS=0.0.0.0:5502 pm2 start main.ts --name app2 --interpreter="../../bin/nubo-deno" --interpreter-args="run --allow-net --allow-env=PORT --no-check --v8-flags=--max-old-space-size=512"
 ```
 
 ### Production test
 ```
-PORT=3000 LISTEN_ADDRESS=0.0.0.0:3000 pm2 start main.ts --interpreter="../nubo-deno" --interpreter-args="run --allow-net --allow-env=PORT --no-check --v8-flags=--max-old-space-size=512"
-LOCATION="Europe - London - eu-west-2" PORT=8000 LISTEN_ADDRESS=0.0.0.0:8000 pm2 start geo.ts --interpreter="../nubo-deno" --interpreter-args="run --allow-net --allow-env=PORT,LOCATION --no-check --v8-flags=--max-old-space-size=512"
+LOCATION="Cloud Run - europe-west" PORT=2000 LISTEN_ADDRESS=0.0.0.0:2000 pm2 start ./deno-test/geo.ts --interpreter="./nubo-deno" --interpreter-args="run --allow-net --allow-env=PORT,LOCATION --no-check --v8-flags=--max-old-space-size=512"
+
+LOCATION="Europe - London - europe-west2 - gcp" PORT=3000 LISTEN_ADDRESS=0.0.0.0:3000 pm2 start geo.ts --interpreter="../nubo-deno" --interpreter-args="run --allow-net --allow-env=PORT,LOCATION --no-check --v8-flags=--max-old-space-size=512"
+
+LOCATION="US - LA - us-west2 - gcp" PORT=3000 LISTEN_ADDRESS=0.0.0.0:3000 pm2 start geo.ts --interpreter="../nubo-deno" --interpreter-args="run --allow-net --allow-env=PORT,LOCATION --no-check --v8-flags=--max-old-space-size=512"
+
+
+
+LOCATION="Europe - London - eu-west-2 - aws" PORT=3000 LISTEN_ADDRESS=0.0.0.0:3000 pm2 start geo.ts --interpreter="../nubo-deno" --interpreter-args="run --allow-net --allow-env=PORT,LOCATION --no-check --v8-flags=--max-old-space-size=512"
+
+LOCATION="US - California - us-west-1 - aws" PORT=3000 LISTEN_ADDRESS=0.0.0.0:3000 pm2 start geo.ts --interpreter="../nubo-deno" --interpreter-args="run --allow-net --allow-env=PORT,LOCATION --no-check --v8-flags=--max-old-space-size=512"
 ```
