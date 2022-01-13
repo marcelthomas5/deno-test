@@ -19,7 +19,7 @@ app.use(async (ctx, next) => {
 });
 
 app.use(async (ctx) => {
-  ctx.response.body = `app:${PORT} - v2`;
+  ctx.response.body = `app:${PORT} - v3`;
 });
 
 console.log(`http://localhost:${PORT}`);
