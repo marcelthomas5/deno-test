@@ -26,7 +26,7 @@ spec:
             - name: PORT
               value: "8080"
             - name: SOURCE
-              value: "https://raw.githubusercontent.com/marcelthomas5/deno-test/main/main.ts?nubo=3"
+              value: "https://raw.githubusercontent.com/marcelthomas5/deno-test/main/main.ts"
           resources:
             requests:
               memory: "1Mi"
