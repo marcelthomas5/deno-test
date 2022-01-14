@@ -2,7 +2,7 @@ import { Application } from 'https://deno.land/x/oak/mod.ts';
 
 const PORT = parseInt(Deno.env.get('PORT') || '') || 8080;
 const app = new Application();
-const VERSION = 8;
+const VERSION = 9;
 
 console.log(Deno.env.get('LISTEN_ADDRESS'));
 
