@@ -4,8 +4,6 @@ const PORT = parseInt(Deno.env.get('PORT') || '') || 8080;
 const app = new Application();
 const VERSION = 10;
 
-console.log(Deno.env.get('LISTEN_ADDRESS'));
-
 app.use(async (ctx, next) => {
   await next();
   const rt = ctx.response.headers.get('X-Response-Time');
