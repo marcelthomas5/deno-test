@@ -2,7 +2,7 @@ import { Application } from 'https://deno.land/x/oak/mod.ts';
 
 const PORT = parseInt(Deno.env.get('PORT') || '') || 8080;
 const app = new Application();
-const VERSION = 10;
+const VERSION = 11;
 
 app.use(async (ctx, next) => {
   await next();
