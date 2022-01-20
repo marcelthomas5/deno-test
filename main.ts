@@ -1,14 +1,12 @@
-import { Nubo } from 'https://storage.nubo.codes/nubo/0.0.2/mod.ts';
-
-const VERSION = '0.0.2';
+import { Nubo } from 'https://storage.nubo.codes/nubo/0.0.3/mod.ts';
 
 Nubo.router.get('/', ({ response }) => {
   response.body = {
     name: 'deno-test',
-    version: VERSION,
-    cloudProvider: Deno.env.get('NUBO_CLOUD_PROVIDER') || 'unknown',
-    region: Deno.env.get('NUBO_REGION') || 'unknown',
-    location: Deno.env.get('NUBO_LOCATION') || 'unknown',
+    version: Nubo.config.version,
+    cloudProvider: Nubo.config.cloudProvider,
+    region: Nubo.config.region,
+    location: Nubo.config.location,
   };
 });
 
