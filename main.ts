@@ -1,6 +1,6 @@
-import { Nubo } from 'https://storage.nubo.codes/nubo/0.0.1/mod.ts';
+import { Nubo } from 'https://storage.nubo.codes/nubo/0.0.2/mod.ts';
 
-const VERSION = '0.0.1';
+const VERSION = '0.0.2';
 
 Nubo.router.get('/', ({ response }) => {
   response.body = {
