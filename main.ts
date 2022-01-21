@@ -21,8 +21,9 @@ Nubo.router.get('/send-message', async ({ response }) => {
   response.body = result;
 });
 
-Nubo.router.get('/subscriber', async ({ response }) => {
-  const subscriber = await ConvertKit.getSubscriber({ id: '1594016775' });
+Nubo.router.get('/subscriber/:id', async ({ response, params }) => {
+  const { id } = params;
+  const subscriber = await ConvertKit.getSubscriber({ id });
 
   response.body = { subscriber };
 });
