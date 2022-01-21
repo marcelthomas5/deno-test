@@ -1,4 +1,4 @@
-import { Nubo, gql } from 'https://storage.nubo.codes/nubo/0.0.3/mod.ts';
+import { Nubo, gql } from 'https://storage.nubo.codes/@nubo/nubo/0.0.3/mod.ts';
 
 const types = gql`
   scalar JSON
