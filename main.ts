@@ -2,13 +2,18 @@ import { Nubo } from 'https://storage.nubo.codes/@nubo/nubo/0.0.3/mod.ts';
 import { Slack } from 'https://storage.nubo.codes/@businessql/slack/0.0.2/mod.ts';
 import { ConvertKit } from 'https://storage.nubo.codes/@businessql/convertkit/0.0.1/mod.ts';
 
+const VERSION = '0.0.1';
+
 Nubo.router.get('/', ({ response }) => {
   response.body = {
     name: 'deno-test',
-    version: Nubo.config.version,
-    cloudProvider: Nubo.config.cloudProvider,
-    region: Nubo.config.region,
-    location: Nubo.config.location,
+    version: VERSION,
+    nubo: {
+      version: Nubo.config.version,
+      cloudProvider: Nubo.config.cloudProvider,
+      region: Nubo.config.region,
+      location: Nubo.config.location,
+    }
   };
 });
 
