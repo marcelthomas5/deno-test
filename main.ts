@@ -13,6 +13,7 @@ Nubo.router.get('/', ({ response }) => {
       cloudProvider: Nubo.config.cloudProvider,
       region: Nubo.config.region,
       location: Nubo.config.location,
+      secret: Deno.env.get('SECRET') || '--',
     }
   };
 });
