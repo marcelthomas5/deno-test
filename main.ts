@@ -14,6 +14,7 @@ Nubo.router.get('/', ({ response }) => {
       region: Nubo.config.region,
       location: Nubo.config.location,
       secret: Deno.env.get('SECRET') || '--',
+      secret2: Deno.env.get('SECRET_2') || '--',
     }
   };
 });
