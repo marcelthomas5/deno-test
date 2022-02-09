@@ -24,7 +24,7 @@ const resolvers = {
 
 Nubo.router.get('/', async ({ response }) => {
   response.body = {
-    message: 'POST /graphql',
+    use: 'POST /graphql',
   };
 });
 
