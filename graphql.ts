@@ -12,7 +12,7 @@ const resolvers = {
   Query: {
     hello: (parent: any, { id }: any, context: any, info: any) => {
       return {
-        name: 'deno-test',
+        name: 'graphql',
         version: Nubo.config.version,
         cloudProvider: Nubo.config.cloudProvider,
         region: Nubo.config.region,
@@ -21,6 +21,12 @@ const resolvers = {
     },
   },
 };
+
+Nubo.router.get('/', ({ response }) => {
+  response.body = {
+    message: 'GraphQL endpoint: /graphql',
+  };
+});
 
 await Nubo.graphql({
   types,
