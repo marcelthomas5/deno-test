@@ -4,13 +4,13 @@ const types = gql`
   scalar JSON
 
   type Query {
-    hello: JSON
+    info: JSON
   }
 `;
 
 const resolvers = {
   Query: {
-    hello: (parent: any, { id }: any, context: any, info: any) => {
+    info: (parent: any, { id }: any, context: any, info: any) => {
       return {
         name: 'graphql',
         version: Nubo.config.version,
