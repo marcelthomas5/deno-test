@@ -22,12 +22,6 @@ const resolvers = {
   },
 };
 
-Nubo.router.get('/', ({ response }) => {
-  response.body = {
-    message: 'GraphQL endpoint: /graphql',
-  };
-});
-
 await Nubo.graphql({
   types,
   resolvers,
