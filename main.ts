@@ -2,7 +2,7 @@ import { Nubo } from 'https://storage.nubo.codes/@nubo/nubo/0.0.3/mod.ts';
 import { Slack } from 'https://storage.nubo.codes/@businessql/slack/0.0.2/mod.ts';
 import { ConvertKit } from 'https://storage.nubo.codes/@businessql/convertkit/0.0.1/mod.ts';
 
-const VERSION = '0.0.12';
+const VERSION = '0.0.13';
 
 Nubo.router.get('/', ({ response }) => {
   response.body = {
